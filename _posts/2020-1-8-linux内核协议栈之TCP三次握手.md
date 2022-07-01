@@ -42,12 +42,15 @@ __inet_stream_connect主要功能是检查地址长度和协议族；对于TCP�
 因为sk->sk_prot是structproto 类型，struct proto声明了connect接口，因此sk->sk_prot->connect调用的是tcp_v4_connect ，所在文件是net/ipv4/tcp_ipv4.c
 
 ![image](https://user-images.githubusercontent.com/36918717/176906159-156c3f75-cf8b-4ba1-a2de-888a8b13b441.png)
+
 tcp_v4_connect核心逻辑如下：
 
 ![image](https://user-images.githubusercontent.com/36918717/176906175-8ed837cd-5811-4608-af07-1516ab701e7a.png)
+
 其中ip_route_newinet_hash_connect是内核分配端口号逻辑，在上一篇linux内核端口分配策略已经阐述，这里不再赘述。
 
 这里核心函数是tcp_connect，主要功能是根据 sk 中的信息，申请sk_buff空间，将skb初始化为syn报文，调用tcp_connect_queue_skb将报文添加到发送队列sk->sk_write_queue中，并调用tcp_transmit_skb构造TCP头，然后交给网络层处理，最后初始化重传定时器
+
 ![image](https://user-images.githubusercontent.com/36918717/176906203-d625f737-d027-4d99-979f-af37e8a7fe90.png)
 
 以上是TCP三次握手的第一次握手，即client向server发送syn报文过程。
@@ -61,6 +64,7 @@ tcp_v4_connect核心逻辑如下：
 （PS：从网卡接收到包以及内核对包分配内存等逻辑在后续的文章会介绍）
 
 tcp_v4_rcv核心逻辑如下：
+
 ![image](https://user-images.githubusercontent.com/36918717/176906228-d601e562-db96-4940-931a-504fa8ab1855.png)
 ![image](https://user-images.githubusercontent.com/36918717/176906238-14601ccb-aaf6-4fe6-a415-a4baa86323b3.png)
 
