@@ -9,8 +9,8 @@ author:     lwk
 catalog: true
 tags:
     - linux
-	- CFS
-	- 循环调度
+    - CFS
+    - 循环调度
 ---
 
 上一篇聊一聊linux的cpu调度器CFS，我们已经分析了进程创建之后是如何设置相应数据项以及是否进行抢占调度等逻辑。除了进程创建会涉及到CFS，周期性调度也会使用到CFS。
