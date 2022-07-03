@@ -50,7 +50,29 @@ flock对应的lock类型:
 
 flock_make_lock()函数定义：
 
+![image](https://user-images.githubusercontent.com/36918717/177027555-744e237d-a54b-4f05-9cf6-66f7c799927a.png)
 
+![image](https://user-images.githubusercontent.com/36918717/177027560-5c1d4990-b4fc-4551-a36f-8d5215905eef.png)
+由于参数fl是NULL，因此会调用locks_alloc_lock()函数分配file_lock，locks_alloc_lock()调用locks_init_lock_heads()对file_lock进行初始化。
 
+![image](https://user-images.githubusercontent.com/36918717/177027563-697c0903-7784-4c8e-84bc-67197cceb50b.png)
+
+看下file_lock的结构已经核心字段的意思。
+![image](https://user-images.githubusercontent.com/36918717/177027568-951b6b7a-cd39-4cfa-b1d2-c0836116cb16.png)
+
+![image](https://user-images.githubusercontent.com/36918717/177027569-7ab3fc52-f999-4f19-81ba-853ea83c8a98.png)
+flock定义在fs/fuse/file.c文件中（具体根据文件系统类型）
+
+![image](https://user-images.githubusercontent.com/36918717/177027571-90c36441-68d5-4c52-a85a-75ce125db0fa.png)
+
+看下fuse_file_flock()函数实现：
+![image](https://user-images.githubusercontent.com/36918717/177027573-29544883-f9ec-42bc-85f2-e7466827a6bb.png)
+看下locks_lock_file_wait()函数，主要是等获取锁。
+
+![image](https://user-images.githubusercontent.com/36918717/177027575-76e212c8-1a13-4a87-98b5-3b80a6dff31b.png)
+![image](https://user-images.githubusercontent.com/36918717/177027576-f8747b70-1b3c-4478-9a38-2cf4325da5fc.png)
+
+![image](https://user-images.githubusercontent.com/36918717/177027579-725792f6-e2db-439a-9cea-a646b9893407.png)
+如果锁被占用，则flock_lock_inode_wait()就会循环等待获取锁。
 
 
