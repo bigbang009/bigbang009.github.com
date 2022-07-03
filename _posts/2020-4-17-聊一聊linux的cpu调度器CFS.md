@@ -7,8 +7,8 @@ author:     lwk
 catalog: true
 tags:
     - linux
-	- cfs
-	- 进程调度
+    - cfs
+    - 进程调度
 ---
 
 之前文章linux内核fork剖析分析了fork模式创建进程。其中在copy_process函数中sched_fork主要实现父子进程的时间片分割。本文主要分析linux调度器之CFS的逻辑，包括调度算法和数据结构等。有益于linux内核学习者对linux的CPU调度有一定的认识和熟悉。
