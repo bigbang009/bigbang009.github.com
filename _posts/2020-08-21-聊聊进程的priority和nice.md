@@ -8,7 +8,7 @@ catalog: true
 tags:
     - linux
     - priority
-	  - nice
+    - nice
 ---
 
 在学习和实际工作中，经常会遇到进程的priority和nice，之前就一知半解，所以抽空又重新学习整理了下进程的priority和nice到底是什么意思，以及两者之间的关系。
