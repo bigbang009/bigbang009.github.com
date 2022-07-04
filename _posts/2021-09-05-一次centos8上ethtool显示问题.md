@@ -13,15 +13,18 @@ tags:
 在新机房发现虚拟机的宿主机获取网卡基础信息时显示的是无效数据，如下图所示：
 
 ![image](https://user-images.githubusercontent.com/36918717/177042628-4d59796b-c3a9-4768-8735-a9c6c52ba87e.png)
+
 新机房虚拟机的宿主机使用的镜像版本是CentOS Linux release 8.4.2105，kernel是5.10.26-2，经IDC团队排查，和内核版本无关系，但和ethtool版本有关系，centos8的默认带的是5.8版本，使用低版本的ethtool就没问题。
 
 我下载了ethtool的源码包，分别有5.7/5.8/5.9版本，将编译后的二进制放在新机房的虚拟机测试机发现，5.8/5.9版本会出现展示无效数字问题，而低于5.8版本的就没这个问题。如下图所示：
+
 ![image](https://user-images.githubusercontent.com/36918717/177042637-214b3d61-1906-4d1c-9030-79104963256a.png)
 ![image](https://user-images.githubusercontent.com/36918717/177042639-2b8d9f4f-4563-41d3-a549-20c3e8089e53.png)
 
 那么ethtool从5.7版本到5.8版本做了什么修改才会导致展示的数字无效呢？
 
  我们先把5.8编译出二进制，并GDB调试下
+ 
  ![image](https://user-images.githubusercontent.com/36918717/177042651-fb90e591-632e-43a3-92d9-cbec2a0694e9.png)
 
 接下来我们编译5.7版本的二进制，并且GDB看下：
