@@ -33,7 +33,6 @@ tags:
 
 我们把args打印出来看到结果如下：
 
-```
 {{opts = 0x42a275 "-s|--change",no_dev = false, func = 0x408390 <do_sset>, nlfunc = 0x427750<nl_sset>, help = 0x42b60a "Change generic options",
    xhelp = 0x42d310 "\t\t[ speed %d ]\n\t\t[ duplex half|full ]\n\t\t[port tp|aui|bnc|mii|fibre|da ]\n\t\t[ mdix auto|on|off ]\n\t\t[ autoneg on|off]\n\t\t[ advertise %x[/%x] | mode on|off ... [--] ]\n\t\t[ phyad %d ]\n\t\t[xcvr internal|ext"...}, {opts = 0x42a265 "-a|--show-pause",no_dev = false, func = 0x404cc0 <do_gpause>, nlfunc = 0x0,
    help = 0x42b621 "Show pause options", xhelp = 0x0}, {opts =0x42b634 "-A|--pause", no_dev = false, func = 0x4081a0<do_spause>, nlfunc = 0x0, help = 0x42b63f "Set pause options",
@@ -93,7 +92,6 @@ tags:
    xhelp = 0x42e1b8 "The supported sub commands include--show-coalesce, --coalesce", ' ' <repeats 13 times>,"[queue_mask %x] SUB_COMMAND\n"}, {opts = 0x42babf"-h|--help",
    no_dev = true, func = 0x402bf0 <show_usage>, nlfunc = 0x0, help =0x42bac9 "Show this help", xhelp = 0x0}, {opts = 0x42bad8"--version", no_dev = true, func = 0x4023e0 <do_version>,
 nlfunc = 0x0,help = 0x42bae2 "Show version number", xhelp = 0x0}, {opts = 0x0,no_dev = false, func = 0x0, nlfunc = 0x0, help = 0x0, xhelp = 0x0}}
-```
 
  从这里可以看到，args[27]的数据是
  ```
