@@ -33,7 +33,7 @@ tags:
 
 我们把args打印出来看到结果如下：
 ```
-{{opts = 0x42a275 "-s|--change",no_dev = false, func = 0x408390 <do_sset>, nlfunc = 0x427750<nl_sset>, help = 0x42b60a "Change generic options" 
+{{opts = 0x42a275 "-s|--change",no_dev = false, func = 0x408390 <do_sset>, nlfunc = 0x427750<nl_sset>, help = 0x42b60a "Change generic options"}} 
 ...
 {opts = 0x42b92c"-l|--show-channels", no_dev = false, func = 0x403df0<do_gchannels>,
    nlfunc = 0x0, help = 0x42b93f "Query Channels", xhelp = 0x0}
