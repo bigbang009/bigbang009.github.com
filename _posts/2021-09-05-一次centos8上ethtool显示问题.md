@@ -95,9 +95,11 @@ tags:
 nlfunc = 0x0,help = 0x42bae2 "Show version number", xhelp = 0x0}, {opts = 0x0,no_dev = false, func = 0x0, nlfunc = 0x0, help = 0x0, xhelp = 0x0}}
 ```
 
- 从这里可以看到，args[27]的数据是{opts = 0x42b92c "-l|--show-channels", no_dev = false,func = 0x403df0 <do_gchannels>,
-
+ 从这里可以看到，args[27]的数据是
+ ```
+ {opts = 0x42b92c "-l|--show-channels", no_dev = false,func = 0x403df0 <do_gchannels>,
     nlfunc = 0x0, help = 0x42b93f "QueryChannels", xhelp = 0x0}
+ ```
 
 可以看出args[27].nlfunc=0x0。
 
