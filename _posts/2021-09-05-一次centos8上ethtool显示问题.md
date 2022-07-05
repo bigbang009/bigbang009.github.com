@@ -33,9 +33,9 @@ tags:
 
 我们把args打印出来看到结果如下：
 
-{{opts = 0x42a275 "-s|--change",no_dev = false, func = 0x408390 <do_sset>, nlfunc = 0x427750<nl_sset>, help = 0x42b60a "Change generic options",
-   xhelp = 0x42d310 "[ speed %d ][ duplex half|full ][port tp|aui|bnc|mii|fibre|da ][ mdix auto|on|off ][ autoneg on|off][ advertise %x[/%x] | mode on|off ... [--] ][ phyad %d ][xcvr internal|ext"...}, {opts = 0x42a265 "-a|--show-pause",no_dev = false, func = 0x404cc0 <do_gpause>, nlfunc = 0x0,
-   help = 0x42b621 "Show pause options", xhelp = 0x0}, {opts =0x42b634 "-A|--pause", no_dev = false, func = 0x4081a0<do_spause>, nlfunc = 0x0, help = 0x42b63f "Set pause options",
+>{{opts = 0x42a275 "-s|--change",no_dev = false, func = 0x408390 <do_sset>, nlfunc = 0x427750<nl_sset>, help = 0x42b60a "Change generic options",
+>   xhelp = 0x42d310 "[ speed %d ][ duplex half|full ][port tp|aui|bnc|mii|fibre|da ][ mdix auto|on|off ][ autoneg on|off][ advertise %x[/%x] | mode on|off ... [--] ][ >phyad %d ][xcvr internal|ext"...}, {opts = 0x42a265 "-a|--show-pause",no_dev = false, func = 0x404cc0 <do_gpause>, nlfunc = 0x0,
+>   help = 0x42b621 "Show pause options", xhelp = 0x0}, {opts =0x42b634 "-A|--pause", no_dev = false, func = 0x4081a0<do_spause>, nlfunc = 0x0, help = 0x42b63f "Set pause options",
    xhelp = 0x42d458 "[ autoneg on|off ][ rx on|off ][tx on|off ]"}, {opts = 0x42b651 "-c|--show-coalesce", no_dev =false, func = 0x404c30 <do_gcoalesce>,
    nlfunc = 0x0, help = 0x42b664 "Show coalesce options", xhelp =0x0}, {opts = 0x42b67a "-C|--coalesce", no_dev = false, func =0x407b70 <do_scoalesce>, nlfunc = 0x0,
    help = 0x42b688 "Set coalesce options",
