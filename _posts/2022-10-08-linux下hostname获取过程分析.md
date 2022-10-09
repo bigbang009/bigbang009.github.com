@@ -26,3 +26,5 @@ gethostname通过utsname获取对应nodename，结构是struct new_utsname
 其中count表示的是进程数，增加一个进程count数就加一
 ![image](https://user-images.githubusercontent.com/36918717/194737660-2aea9d1a-e982-4d2d-b011-dab2bde03954.png)
 ![image](https://user-images.githubusercontent.com/36918717/194737665-a444bed8-eba2-43ff-8611-a98bff9534b8.png)
+
+这里还涉及到一个kernel的知识点就是namespace，hostname涉及到了kernel的UTS namespace，关于namespace本文不做阐述，以后有机会再详细分析
