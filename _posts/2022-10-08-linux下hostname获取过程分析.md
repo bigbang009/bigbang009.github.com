@@ -13,6 +13,7 @@ tags:
 
 hostname是centos内置的获取主机名的命令，该命令对应的源码是net-tools
 ![image](https://github.com/bigbang009/bigbang009.github.com/assets/36918717/91f27866-0b8a-4a51-9ea9-be10dd541020)
+
 其中hostname二进制是编译出来的可执行文件
 通过GDB hostname可以看到，最终是通过系统调用gethostname获取主机名
 ![image](https://user-images.githubusercontent.com/36918717/194737638-fc8b0eb7-72b0-4ccb-9c51-b08650ed6605.png)
